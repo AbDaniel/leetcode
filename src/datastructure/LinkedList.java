@@ -50,9 +50,30 @@ public class LinkedList<T> {
         return true;
     }
 
-//    public T remove(int index) {
-//
-//    }
+    public T remove(int index) {
+        if (head == null) throw new RuntimeException("Empty list");
+        if (index >= length()) throw new IndexOutOfBoundsException();
+
+        if (index == 0) {
+            T result = head.data;
+            head = head.next;
+
+            return result;
+        }
+
+
+        ListNode<T> currNode = head;
+        ListNode<T> parentNode = null;
+
+        for (int i = 0; i <= index - 1; i++) {
+            parentNode = currNode;
+            currNode = currNode.next;
+        }
+
+        T result = currNode.data;
+        parentNode.next = currNode.next;
+        return result;
+    }
 
     public int length() {
         int length = 0;
