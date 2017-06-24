@@ -1,8 +1,14 @@
-package linkedlist;
+package datastructure;
 
 public class LinkedList<T> {
 
     private ListNode<T> head;
+
+    public LinkedList(T... values) {
+        for (T value : values) {
+            add(value);
+        }
+    }
 
     public void add(T data) {
         addToTail(data);

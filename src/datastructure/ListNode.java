@@ -1,4 +1,4 @@
-package linkedlist;
+package datastructure;
 
 /**
  * Created by daniel on 6/23/17.
