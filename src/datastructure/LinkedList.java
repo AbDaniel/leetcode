@@ -105,4 +105,27 @@ public class LinkedList<T> {
 
         return br.toString();
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (!(obj instanceof LinkedList)) return false;
+        boolean isEqual = true;
+
+        LinkedList<T> other = (LinkedList<T>) obj;
+
+        ListNode<T> otherHead = other.head;
+        ListNode<T> tempHead = this.head;
+
+        while (tempHead != null && otherHead != null) {
+            if (tempHead.data != otherHead.data) {
+                isEqual = false;
+                break;
+            }
+
+            tempHead = tempHead.next;
+            otherHead = otherHead.next;
+        }
+
+        return isEqual && tempHead == null & otherHead == null;
+    }
 }
