@@ -2,6 +2,8 @@ package dynamicprogramming.bottomup;
 
 import java.util.Arrays;
 
+import static util.StringHelper.print2DIntArray;
+
 /**
  * Created by daniel on 6/26/17.
  */
@@ -29,7 +31,9 @@ public class CoinChangeBottomUp {
             }
         }
 
-        System.out.println(Arrays.deepToString(table).replace("], ", "]\n"));
+        print2DIntArray(table);
+        System.out.println();
+        
         return table[table.length - 1][table[0].length - 1];
     }
 
