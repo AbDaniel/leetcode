@@ -8,7 +8,7 @@ import java.util.Arrays;
 public class NumberOfPathsMemo {
 
     public int numberOfPaths(boolean[][] board) {
-        int[][] counts = new int[board.length][board[0].length - 1];
+        int[][] counts = new int[board.length][board[0].length];
         for (int[] row : counts) {
             Arrays.fill(row, 0);
         }
