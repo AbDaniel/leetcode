@@ -25,6 +25,24 @@ public class LinkedList<T> {
         }
     }
 
+    public T get(int index) {
+        if (index < 0 || index >= this.length()) {
+            throw new IndexOutOfBoundsException();
+        }
+
+        int currIndex = 0;
+        ListNode<T> curHead = head;
+
+        while (curHead != null) {
+            if (currIndex == index) break;
+            currIndex += 1;
+
+            curHead = curHead.next;
+        }
+
+        return curHead.data;
+    }
+
     public void addToHead(T data) {
 
     }

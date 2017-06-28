@@ -9,6 +9,23 @@ import static org.junit.Assert.*;
  */
 public class LinkedListTest {
     @Test
+    public void get() throws Exception {
+        LinkedList<Character> list = new LinkedList<>();
+
+        list.addToTail('a');
+        list.addToTail('b');
+        list.addToTail('c');
+        list.addToTail('d');
+        list.addToTail('e');
+
+        assertEquals((Character) 'a', list.get(0));
+        assertEquals((Character) 'b', list.get(1));
+        assertEquals((Character) 'c', list.get(2));
+        assertEquals((Character) 'd', list.get(3));
+        assertEquals((Character) 'e', list.get(4));
+    }
+
+    @Test
     public void removeIndex() throws Exception {
         LinkedList<Character> list = new LinkedList<>();
 
