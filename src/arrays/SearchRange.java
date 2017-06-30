@@ -6,6 +6,8 @@ package arrays;
 public class SearchRange {
 
     public int[] searchRange(int[] nums, int target) {
+        if (nums.length == 0)
+            return new int[]{-1, -1};
 
         int[] range = new int[2];
         range[0] = target == nums[0] ? 0 : -1;
