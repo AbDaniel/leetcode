@@ -8,22 +8,13 @@ import java.util.Set;
  */
 public class JumpGame {
     public boolean canJump(int[] nums) {
-        Set<Integer> indexSet = new HashSet<>();
+        int reach = 0;
 
-        for (int i = nums.length - 2; i >= 0; i--) {
-            int curr = nums[i];
-            int maxJump = i + curr;
-
-            if (maxJump >= nums.length - 1) {
-                indexSet.add(i);
-                continue;
-            }
-
-            for (int idx = i + 1; idx <= maxJump; idx++) {
-                if (indexSet.contains(idx)) indexSet.add(i);
-            }
+        for (int i = 0; i < nums.length && i <= reach; i++) {
+            if (reach >= nums.length - 1) return true;
+            reach = Math.max(reach, i + nums[i]);
         }
 
-        return indexSet.contains(0);
+        return false;
     }
 }
