@@ -57,12 +57,12 @@ public class LinkedList<T> {
         ListNode<T> currNode = head.next;
         ListNode<T> parent = head;
 
-        while (currNode.next != null && currNode.data != data) {
+        while (currNode != null && currNode.data != data) {
             parent = currNode;
             currNode = currNode.next;
         }
 
-        if (currNode.next == null && currNode.data != data) return false;
+        if (currNode == null) return false;
         parent.next = currNode.next;
 
         return true;
