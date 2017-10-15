@@ -11,4 +11,9 @@ public class StringHelper {
         String twoDArray = Arrays.deepToString(table).replace("], ", "]\n").replace("]", "").replace("[", "");
         System.out.println(twoDArray);
     }
+
+    public static void print2DBooleanArray(boolean[][] table) {
+        String twoDArray = Arrays.deepToString(table).replace("], ", "]\n").replace("]", "").replace("[", "");
+        System.out.println(twoDArray);
+    }
 }
